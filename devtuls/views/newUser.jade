@@ -1,0 +1,21 @@
+extends ./layout.jade
+block contenido
+	h1 Welcome, here you can create a new account
+	form(id="loginForm", action="/create", method="post")
+		div(class="form-group")
+			label(for="name") Name
+			input(type="text",name="name",id="name",placeholder="Your name",class="form-control")
+		div(class="form-group")
+			label(for="lastname") LastName
+			input(type="text",name="lastname",id="lastname",placeholder="Your LastName",class="form-control")		
+		div(class="form-group")
+			label(for="email") Email
+			input(type="email",name="email",id="email",placeholder="Your Email",class="form-control")
+		div(class="form-group")
+			label(for="password") Password
+			input(type="password",name="password",id="password",placeholder="Your Pass",class="form-control")
+		div(class="form-group")
+			label(for="password") Repeat your pass
+			input(type="password",name="passwordval",id="passwordval",placeholder="Repeat your pass",class="form-control")				
+		div(class="form-group")
+			input(type="submit", value="Create",class="btn btn-default")		
