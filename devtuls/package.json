@@ -1,12 +1,12 @@
 {
-  "name": "hola_express",
+  "name": "Dev",
   "version": "1.0.0",
-  "description": "hola bitch",
+  "description": "Devtuls",
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "juancho",
+  "author": "Juan",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.17.1",

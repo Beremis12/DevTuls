@@ -15,19 +15,18 @@ var express=require('express'),
 	 keys:["key1", "key2"]
 	 
 	}));
-	//configurar motor de vista (en este caso use .jade)
-	app.set("view engine", "jade");
+	//configurar motor de vista (en este caso use .hbs)
+	app.set("view engine", "hbs");
 
 	app.get("/",function(req,res){
 		User.find(function(err,doc){
-			console.log(req.session.user_id);
-			console.log(Date.now());
-			res.render("index");
+			if(!req.session.user_id)
+				res.render("index");
+			else
+				res.redirect("/app");
 		
 
 		})
-		
-		
 	})
 
 
@@ -49,7 +48,7 @@ var express=require('express'),
 			else
 				if(docs!=null){
 					req.session.user_id=docs._id;
-					res.redirect("app");
+					res.redirect("/app");
 				}
 				else{
 					res.redirect('/');
